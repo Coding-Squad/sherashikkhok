@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        var message = [[${myallteacher}]];
+
+        $(document).ready(function(){
+            for(var i=0 ; i< message.length ; i++) {
+                //language=HTML
+                $('<div class="item">' +
+                        //"@{/user/avatar/image/{nameOfTeacher}(nameOfTeacher=${teacher.name})}"
+                    '<img src="/user/avatar/image/'+message[i].name+'">'+
+                    '<div class="carousel-caption" style="position: inherit; bottom: 0;">' +
+                        '<h3>'+message[i].name +'</h3>'+
+                        '<h4>'+message[i].instituteName +'</h4>'+
+                        '<h5>'+message[i].aboutTeacher +'</h5>'+
+                     //   '<form action="@{/voteCount/{nameAndIdOfTeacher}(nameAndIdOfTeacher=${teacher.name})}" method="post" >' +
+                        '<form action="/voteCount/'+message[i].name+'" method="post" >' +
+                            '<input type="submit" value="ভোট করুন" class="btn btn-primary btn-sm" />' +
+                            '<span> ' +
+                                '<label >'+message[i].total+' </label>' +
+                            '</span>' +
+                            '<input type="submit" value="শেয়ার করুন" class="btn btn-primary btn-sm" />' +
+                        '</form>'+
+                    '</div>' +
+                    '</div>').appendTo('.carousel-inner');
+
+                $('<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
+
+            }
+
+            $('.item').first().addClass('active');
+            $('.carousel-indicators > li').first().addClass('active');
+            $('#carousel-example-generic').carousel();
+        });
+
+
+
+        /*]]>*/
+    </script>
+
+
+</head>
+<body>
+<header th:replace="userLayout :: user-site-header"></header>
+
+<div th:fragment="content">
+
+    <header id="gtco-header" class="gtco-cover" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="slider_text col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>সেরা শিক্ষক মূল্যায়ন</h1>
+                            <h2 style="color: #A2FCFD;">
+                                মানুষ গড়ার কারিগরকে স্বীকৃতি দেবার একটি ছোট্ট প্রয়াস<a
+                                    href="#" target="_blank"></a>
+                            </h2>
+                            <!-- <div class="boxed">
+                                <h4>আমি একজন</h4>
+                                <span> <a href="#"><input id="btn-teacher"
+                                        type="button" value="শিক্ষক" /></a> <a href="#"><input
+                                        id="btn-student" type="button" value="শিক্ষার্থী"></a>
+                                </span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" id="listed-institutes">
+        <div class="container"></div>
+    </div>
+
+
+<div class="container">
+
+    <h4>মানুষ গড়ার সকল কারিগরবৃন্দ</h4>
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner"></div>
+
+
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+
+
+<!--<div class="container-fluid" id=teachersListView>
+    <div class="container">
+        &lt;!&ndash; Example row of columns &ndash;&gt;
+        <h4>মানুষ গড়ার সকল কারিগরবৃন্দ</h4>
+        <div>
+            <div class="row">
+                <div class="col-md-4" th:each="teacher : ${teacherList}" onload="">
+                    &lt;!&ndash; 	{id}(id=${user.id}) &ndash;&gt;
+                    <img
+                            th:src="@{/user/avatar/image/{nameOfTeacher}(nameOfTeacher=${teacher.name})}"
+                            class="img-responsive" alt="" height="100px" width="150px" /> <br>
+
+
+                    <label th:text="${teacher.name}">...</label><br> <label
+                        th:text="${teacher.instituteName}">...</label><br> <label
+                        th:text="${teacher.aboutTeacher}">...</label><br> <input
+                        type="submit" value="Vote" />&nbsp; &nbsp; <input type="submit"
+                                                                          value="Share" /><br> <br>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>-->
+    <!-- <div class="container-fluid" id=postsListsView>
+        Example row of columns
+        <h4>স্মৃতিঅম্লান</h4>
+        <h2>List of all posts!</h2>
+        <div>
+            <div class="row">
+                <div class="col-md-6" th:each="post : ${postsList}">
+
+                    <label th:text="${post.title}">...</label><br> <label
+                        th:text="${post.body}">...</label><br> <label
+                        th:text="${post.email}">...</label><br> <input
+                        type="submit" value="Like" />&nbsp; &nbsp; <input type="submit"
+                        value="Share" /><br> <br>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div> -->
+
+</div>
+<footer th:replace="layout :: site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot Image Lister</title>
+    </head>
+    <body>
+        <h1>Images in the Database</h1>
+        
+        <div class="col-md-4" th:each="image : ${myImages}" onload="">
+        	<label th:text="${image.imageName}">...</label> &nbsp; &nbsp; <label th:text="${image.mimetype}">...</label><br> 
+        	<img th:src="@{/imageid/{idOfImage}(idOfImage=${image.id})}"
+										class="img-responsive" alt="" height="100px" width="150px" /> <br>
+        
+        </div>
+        
+        <!-- <ul th:each="image : ${images}">
+            <li th:text="${image.mimetype}">Image Mimetype Here</li>                 
+		</ul> -->
+        
+        <h2 style="color:red;" th:text="${flash}"></h2>
+        <form method="POST" action="list" enctype="multipart/form-data">
+            Upload a new image: 
+            <input type="file" name="file"/>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>

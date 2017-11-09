@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+<style type="text/css">
+.test-Class {
+	
+}
+</style>
+
+</head>
+
+<body>
+	<header th:replace="layout :: site-header"></header>
+	<div th:fragment="content">
+
+		<h2>List of all teachers!</h2>
+		<div>
+
+			<div class="container-fluid">
+				<div class="container">
+					<div class="row">
+									
+							<div class="col-md-4" th:each="teacher : ${teacherList}" onload="">
+																		
+									<img th:src="@{/user/avatar/image/{nameOfTeacher}(nameOfTeacher=${teacher.name})}"
+										class="img-responsive" alt="" height="100px" width="150px" /> <br>
+		
+								
+									<label th:text="${teacher.name}">...</label><br> 
+									<label th:text="${teacher.instituteName}">...</label><br> 
+									<label th:text="${teacher.aboutTeacher}">...</label><br> <br>
+									
+								<!-- <label th:src = "@{/getAllVoteCount/{nameOfTeacherCount}(nameOfTeacherCount=${teacher.name})}" th:method = "get">Total vote</label><br>  -->
+									
+								<form action="#" th:action="@{/voteCount/{nameAndIdOfTeacher}(nameAndIdOfTeacher=${teacher.name})}" th:method="post" >
+									
+									  <button type="submit" id="submitButton">Vote </button>&nbsp; &nbsp; 
+									  <input type="submit" value="Share" /><br>
+								</form>
+								<span><label th:text="${teacher.total}"></label></span>
+								
+								
+
+								
+								<span th:utext="${successMessage}"></span>
+		
+							</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="layout :: site-footer"></footer>
+</body>
+</html>

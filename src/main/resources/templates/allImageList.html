@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot Image Lister</title>
+    </head>
+    <body>
+        <h1>All Images From the Database</h1>
+        
+        <div class="col-md-4" th:each="image : ${allImageList}" onload="">
+        	<!-- <label th:text="${image.imageName}">...</label> &nbsp; &nbsp; -->
+        	<img th:src="@{/imageid/{idOfImage}(idOfImage=${image.id})}"
+										class="img-responsive" alt="" height="100px" width="150px" /> <br>
+			<label th:text="${image.userName}">...</label><br><br>
+        
+        </div>
+        
+       
+    </body>
+</html>

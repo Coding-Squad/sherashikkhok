@@ -1,0 +1,10 @@
+.admin-message-text {
+	font-style: normal;
+	font-size: 22px;
+	color: #004080;
+}
+
+.dashboard_bar{
+	background: green;
+    padding: 10px 10px 45px 25px;
+}

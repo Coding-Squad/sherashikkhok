@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace= "layout :: site-head">
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/registration.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	function readURL(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	
+	        reader.onload = function (e) {
+	            $('#blah').attr('src', e.target.result);
+	        };
+	
+	        reader.readAsDataURL(input.files[0]);	        
+	       
+	    }
+	}
+</script>
+
+</head>
+<body>
+	<!-- <form th:action="@{/}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go
+			To Login Page</button>
+	</form>
+	<form th:action="@{/teachersList}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go
+			To Teachers Page</button>
+	</form>
+ -->
+ <header th:replace="layout :: site-header"></header>
+ <div th:fragment="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form autocomplete="off" action="#"
+					th:action="@{/teacherRegistration}" th:object="${teacher}"
+					method="post" class="form-horizontal" role="form"
+					enctype="multipart/form-data">
+					<h2>Registration Form</h2>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								class="validation-message"></label> <input type="text"
+								th:field="*{name}" placeholder="Name" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-9">
+							<label th:if="${#fields.hasErrors('nid')}" th:errors="*{nid}"
+								class="validation-message"></label> <input type="text"
+								th:field="*{nid}" placeholder="Teacher's NID"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{teacherEmail}"
+								placeholder="Email Address of teacher" class="form-control" />
+							<label th:if="${#fields.hasErrors('teacherEmail')}"
+								th:errors="*{teacherEmail}" class="validation-message"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{instituteName}"
+								placeholder="School/College/University Name"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('instituteName')}"
+								th:errors="*{instituteName}" class="validation-message"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{mobileNumber}"
+								placeholder="Mobile Number" class="form-control" /> <label
+								th:if="${#fields.hasErrors('mobileNumber')}"
+								th:errors="*{mobileNumber}" class="validation-message"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{facebookId}"
+								placeholder="Facebook profile link" class="form-control" /> <label
+								th:if="${#fields.hasErrors('facebookId')}"
+								th:errors="*{facebookId}" class="validation-message"></label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{aboutTeacher}"
+								placeholder="Write Something About Your Teacher"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('aboutTeacher')}"
+								th:errors="*{aboutTeacher}" class="validation-message"></label>
+						</div>
+					</div>
+					<!-- my Image code -->
+					<div class="form-group">
+						<div class="col-sm-9">						
+							
+							<input type="file" name="file"  onchange="readURL(this);"/><br /> <br /> 
+							<img id="blah" src="http://placehold.it/180" alt="your image" />							
+							
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Register User</button>
+						</div>
+					</div>
+
+					<span th:utext="${successMessage}"></span>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>

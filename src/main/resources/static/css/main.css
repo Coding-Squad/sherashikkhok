@@ -1,0 +1,210 @@
+/* CSS Document */
+.full-layout {
+	background: #FFFFFF;
+}
+
+.navbar-fixed-top {
+	height: 100px;
+}
+
+.navbar-brand {
+	width: 219px;
+	height: 30px;
+	color: #15b0a9;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 25px;
+	transform: scaleY(1);
+}
+
+.navbar-brand p {
+	font-size: 10px;
+	text-align: center;
+	padding-right: 15px;
+	color: black;
+}
+
+.navbar .registration-buttons ul {
+	padding: 0;
+	margin: 2px 0 0 0;
+	margin-top: 0px;
+}
+
+.navbar .registration-buttons ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: inline;
+	font-size: 15px;
+}
+
+.navbar .registration-buttons ul li a {
+	color: black;
+}
+
+.entrance-devider {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.search-form {
+	padding-top: 0px;
+}
+
+.search-form #search input[type="text"] {
+	background: url(../images/icons/search-icon.png) no-repeat 12px 8px
+		#fcfcfc;
+	border: 1px solid #d1d1d1;
+	font: bold 10px Arial, Helvetica, Sans-serif;
+	color: #bebebe;
+	margin-top: 0px;
+	width: 300px;
+	padding: 8px 15px 8px 35px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-webkit-transition: all 0.7s ease 0s;
+	-moz-transition: all 0.7s ease 0s;
+	-o-transition: all 0.7s ease 0s;
+	transition: all 0.7s ease 0s;
+}
+
+.social-buttons img {
+	padding: 5px 5px 5px 5px;
+}
+
+#gtco-header, #gtco-counter, .gtco-bg {
+	background-image: url(../images/bg_img.png);
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 900px;
+}
+
+.gtco-bg {
+	background-position: center center;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+
+#gtco-header .display-tc h1, #gtco-counter .display-tc h1, .gtco-cover .display-tc h1
+	{
+	margin-bottom: 0px;
+	font-size: 70px;
+	line-height: 1.5;
+}
+
+#gtco-header .display-tc h1, #gtco-header .display-tc h2, #gtco-counter .display-tc h1,
+	#gtco-counter .display-tc h2, .gtco-cover .display-tc h1, .gtco-cover .display-tc h2
+	{
+	margin: 0;
+	padding: 0;
+	color: white;
+	text-transform: uppercase;
+}
+
+.slider_text {
+	padding: 200px 25px 25px 160px;
+}
+
+.boxed, .boxed h4 {
+	color: aqua;
+	/*background-image: url(../images/Rectangle_19.png);*/
+	display: inline;
+	overflow: hidden;
+}
+
+.boxed a {
+	text-decoration: none;
+}
+
+.boxed input {
+	margin-left: 30px;
+	background: transparent;
+	color: aqua;
+	margin-top: 20px;
+}
+
+/*#btn-teacher{
+	margin-left: 30px;
+	background: transparent;
+	color: aqua;
+}
+
+#btn-student{
+	margin-left: 30px;
+	background: transparent;
+	color: aqua;
+}
+*/
+.ss-footerlist1 ul {
+	list-style: none;
+	margin-top: -30px;
+	height: 200px;
+	background-color: #343434;
+	width: 100%;
+	font-size: 10px;
+	color: #FFF;
+	text-indent: unset;
+	text-align: left;
+	padding-top: 50px;
+	padding-left: 250px;
+}
+
+.copyright-zone {
+	background-color: #1F1F1F;
+	height: 50px;
+	font-size: 10px;
+	color: white;
+	text-align: left;
+	margin-top: -20px;
+	padding: 20px 250px;
+}
+
+#teachersListView {
+	background-color: #E0E0E0;
+}
+
+#teachersListView h4 {
+	color: #2EB6AF;
+	padding-top: 15px;
+}
+
+#listed-institutes {
+	background-color: #FFF;
+}
+
+#postsListsView h4 {
+	color: #2EB6AF;
+	padding-top: 15px;
+}
+
+/*.my_content {
+    position: relative;
+    top: 100px;
+}
+
+.carousel-indicators li {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	margin: 10px;
+	text-indent: 0;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	background-color: #0000ff;
+	box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
+}
+.carousel-indicators .active {
+	width: 48px;
+	height: 48px;
+	margin: 10px;
+	background-color: #ffff99;
+}*/

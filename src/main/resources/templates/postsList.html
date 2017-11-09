@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+<style type="text/css">
+.test-Class {
+	
+}
+</style>
+</head>
+
+<body>
+	<header th:replace="layout :: site-header"></header>
+	<div th:fragment="content">
+
+		<h2>List of all posts!</h2>
+		<div class="container">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6" th:each="post : ${postsList}">
+
+						<b><label th:text="${post.title}">...</label></b><br> <label
+							th:text="${post.body}">...</label><br>
+						<p>Posted By : &nbsp</p>
+						<label th:text="${post.email}">...</label><br> <input
+							type="submit" value="Like" />&nbsp; &nbsp; <input type="submit"
+							value="Share" /><br>
+						<br>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<footer th:replace="layout :: site-footer"></footer>
+</body>
+</html>
