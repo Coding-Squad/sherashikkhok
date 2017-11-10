@@ -1,0 +1,81 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head">
+    <meta charset="ISO-8859-1"></meta>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="icon" th:src="@{..images/icons/favicon.png}" />
+    <meta th:include="this :: head" th:remove="tag"></meta>
+    <title>সেরা শিক্ষক</title>
+</head>
+<body class="full-layout">
+<header th:fragment="site-header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header col-md-2">
+                <a class="navbar-brand " th:href="@{/}">সেরা শিক্ষক.
+                    <p>দেশ ও জাতি গঠনে নিবেদিত প্রাণ</p>
+                </a>
+            </div>
+            <div class="search-form col-md-4">
+                <form method="get" action="/search" id="search">
+                    <input name="q" type="text" size="40"
+                           placeholder="আপনার পছন্দের শিক্ষককে খুঁজে বের করুন" />
+                </form>
+            </div>
+            <div class="social-buttons col-md-2">
+                <a th:href="@{https://www.facebook.com}"><span><img
+                        th:src="@{images/facebook.png}" /></span></a> <a
+                    th:href="@{https://www.twitter.com}"><span><img
+                    th:src="@{images/twitter.png}" /></span></a> <a th:href="@{https://www.}"><span><img
+                    th:src="@{images/google.png}" /></span></a> <a
+                    th:href="@{https://www.linkedin.com}"><span><img
+                    th:src="@{images/LinkedIn.png}" /></span></a>
+            </div>
+            <div class="registration-buttons col-md-3">
+                <ul>
+						<span><li class="btn-cta"><a
+                                th:href="@{/registration}">নিবন্ধন</a></li></span>
+                    <span class="entrance-devider">|</span>
+                    <span><li class="btn-cta"><a th:href="@{/login}"><span>প্রবেশ</span></a></li></span>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<div th:fragment="content">
+
+</div>
+<footer th:fragment="site-footer">
+    <div class="container-fliud">
+        <div class="ss-footerlist1">
+            <ul>
+                <li>মানুষ গড়ার সকল কারিগরবৃন্দ</li>
+                <br>
+                <li>আমার ক্যাম্পাস লাইফ</li>
+                <br>
+                <li>স্মৃতিঅম্লান</li>
+                <br>
+                <li>নিবন্ধিত শিক্ষাপ্রতিষ্ঠানসমূহ</li>
+                <br>
+            </ul>
+        </div>
+        <div class="copyright-zone">
+            <p>&copy; ইনোভেটিভ টিচিং লার্নিং এক্সপো।</p>
+        </div>
+    </div>
+
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</footer>
+
+</body>
+</html>

@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
-<head  th:replace= "layout :: site-head">
+<head  th:replace= "layouts/before-layout  :: site-head">
 </head>
 
 <body>
-<header th:replace="layout :: site-header" style="background-color: #FFFFFF"></header>
+<header th:replace="layouts/before-layout  :: site-header" style="background-color: #FFFFFF"></header>
 <div th:fragment="content">
 <div th:insert="content">
 	<!-- <form th:action="@{/registration}" method="get">
@@ -14,7 +14,6 @@
 	</form>	 -->
 	
 	<div class="container">
-		<img th:src="@{/images/login.jpg}" class="img-responsive center-block" width="300" height="300" alt="Logo" />
 		<form th:action="@{/login}" method="POST" class="form-signin">
 			<h3 class="form-signin-heading" th:text="Welcome"></h3>
 			<br/>
@@ -25,7 +24,7 @@
 				id="password" name="password" class="form-control" /> <br /> 
 				
 			<div align="center" th:if="${param.error}">
-				<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+				<p style="font-size: 20px; color: #FF1C19;">Email or Password invalid, please verify</p>
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
 		</form>
@@ -33,6 +32,6 @@
 	
 </div>
 </div>
-<footer th:replace="layout :: site-footer"></footer>
+<footer th:replace="layouts/before-layout  :: site-footer"></footer>
 </body>
 </html>
